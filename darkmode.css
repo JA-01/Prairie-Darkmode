@@ -114,6 +114,36 @@ html[data-prairie-darkmode="dark"] :is(.card-header, .card-footer, .modal-header
 }
 
 html[data-prairie-darkmode="dark"] :is(.popover-body, .offcanvas-title) { color: var(--pdm-text); }
+
+/* CS 128 course styles set navy text below the themed question card, so the
+   question prompts, choices, and math cannot inherit the card's foreground. */
+html[data-prairie-darkmode="dark"] .cs128-wrap {
+  color: var(--pdm-text);
+}
+html[data-prairie-darkmode="dark"] .cs128-hero {
+  background-color: var(--pdm-raised);
+  border-color: var(--pdm-border);
+  color: var(--pdm-text);
+}
+html[data-prairie-darkmode="dark"] .cs128-hero h4 {
+  color: var(--pdm-text);
+}
+html[data-prairie-darkmode="dark"] .cs128-hero p {
+  color: var(--pdm-muted);
+}
+/* Course-defined panels and headings may use their own classes or inline
+   styles. content.js marks their neutral light surfaces and dark text only. */
+html[data-prairie-darkmode="dark"] .cs128-wrap [data-prairie-darkmode-surface],
+html[data-prairie-darkmode="dark"] .cs128-wrap[data-prairie-darkmode-surface] {
+  background-color: var(--pdm-raised) !important;
+  border-color: var(--pdm-border) !important;
+  color: var(--pdm-text) !important;
+}
+html[data-prairie-darkmode="dark"] .cs128-wrap [data-prairie-darkmode-text],
+html[data-prairie-darkmode="dark"] .cs128-wrap[data-prairie-darkmode-text] {
+  color: var(--pdm-text) !important;
+}
+
 html[data-prairie-darkmode="dark"] .accordion-button:not(.collapsed) { background-color: #243e63; color: #d7e7ff; }
 html[data-prairie-darkmode="dark"] :is(.bg-white, .bg-light, .bg-body, .bg-body-secondary, .bg-body-tertiary, .text-bg-light) {
   background-color: var(--pdm-surface) !important;
